@@ -10,7 +10,13 @@ import java.util.List;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+    /*// In JPQL use Alies
     @Query("SELECT u FROM User u WHERE u.username = :username")
+    List<User> findByUserName(@Param("username") String username);*/
+
+    // In SQL
+    @Query(value = "select * from users where username = :username", nativeQuery = true)
     List<User> findByUserName(@Param("username") String username);
+
 
 }
