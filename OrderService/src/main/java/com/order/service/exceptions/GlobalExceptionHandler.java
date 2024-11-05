@@ -11,4 +11,16 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Object> OrderNotFoundException(OrderNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<Object> UserNotFoundException(UserNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+
+    }
+
+    @ExceptionHandler(ProductIdNotFoundException.class)
+    public ResponseEntity<Object> ProductIdNotFoundException(ProductIdNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+
+    }
 }

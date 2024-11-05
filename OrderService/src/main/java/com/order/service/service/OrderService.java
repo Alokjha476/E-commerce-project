@@ -4,6 +4,7 @@ import com.order.service.dto.OrderDto;
 import com.order.service.entity.Orders;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface OrderService {
     Orders addOrder(OrderDto orderDto);
@@ -15,6 +16,10 @@ public interface OrderService {
     Orders updateOrder(Long orderId, OrderDto orderDto);
 
     void cancelOrder(Long orderId);
+
+    List<Orders> getByUserId(Long userId);
+
+    List<Orders> getByProductId(Long productId);
 
 
 }
